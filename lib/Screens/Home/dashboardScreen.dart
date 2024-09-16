@@ -3,6 +3,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:mahakundali_astrologer_app/Components/util.dart';
+import 'package:mahakundali_astrologer_app/Screens/Home/bookingScreen.dart';
+import 'package:mahakundali_astrologer_app/Screens/Home/earningScreen.dart';
+import 'package:mahakundali_astrologer_app/Screens/Home/homeScreen.dart';
+import 'package:mahakundali_astrologer_app/Screens/Home/profile.dart';
+import 'package:mahakundali_astrologer_app/Screens/profile_screens/editProfile.dart';
 import 'package:mahakundali_astrologer_app/service/apiMAnager.dart';
 import 'package:mahakundali_astrologer_app/service/serviceManager.dart';
 
@@ -20,7 +25,7 @@ class _DashboardScreenState extends State<DashboardScreen>
   void initState() {
     super.initState();
     getDashboardData(context);
-    _tabController = TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -78,11 +83,10 @@ class _DashboardScreenState extends State<DashboardScreen>
       body: TabBarView(
         controller: _tabController,
         children: [
-          //  HomeScreen(),
-          // ShoppingScreen(),->Bookings
-          //ChatListScreen(),
-          // ShoppingCartScreen(),
-          //ProfileScreen(),
+          HomeScreen(),
+          BookingListScreen(),
+          EarningsScreen(),
+          EditProfileScreen(),
         ],
       ),
       bottomNavigationBar: _buildBottomTabBar(),
@@ -103,18 +107,18 @@ class _DashboardScreenState extends State<DashboardScreen>
         tabs: [
           const Tab(icon: Icon(Icons.home)),
           const Tab(icon: Icon(Icons.shop)),
-          Container(
-            height: 60,
-            child: const Column(
-              children: [
-                CircleAvatar(
-                  backgroundColor: Colors.white,
-                  radius: 28,
-                  child: Icon(Icons.chat, size: 30, color: Colors.orange),
-                ),
-              ],
-            ),
-          ),
+          // Container(
+          //   height: 60,
+          //   child: const Column(
+          //     children: [
+          //       CircleAvatar(
+          //         backgroundColor: Colors.white,
+          //         radius: 28,
+          //         child: Icon(Icons.chat, size: 30, color: Colors.orange),
+          //       ),
+          //     ],
+          //   ),
+          // ),
           const Tab(icon: Icon(Icons.shopping_cart)),
           const Tab(icon: Icon(Icons.person)),
         ],
@@ -126,19 +130,5 @@ class _DashboardScreenState extends State<DashboardScreen>
         ),
       ),
     );
-  }
-}
-
-class LiveScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: Text('Live Screen'));
-  }
-}
-
-class OrdersScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: Text('Orders Screen'));
   }
 }

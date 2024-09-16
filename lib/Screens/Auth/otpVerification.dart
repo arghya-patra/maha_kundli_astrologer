@@ -94,6 +94,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen>
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 50.0),
                 child: PinCodeTextField(
+                  keyboardType: TextInputType.number,
                   appContext: context,
                   length: 4,
                   controller: _otpController,
@@ -220,7 +221,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen>
         print(ServiceManager.userID);
         print(ServiceManager.tokenID);
         // print(ServiceManager.roleAs);
-        //  ServiceManager().getUserData();
+        ServiceManager().getUserData();
         toastMessage(message: 'Logged In');
         Navigator.pushAndRemoveUntil(
             context,
