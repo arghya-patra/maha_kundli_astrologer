@@ -48,7 +48,7 @@ dependencies:
   pin_code_fields: ^7.0.0
   animated_text_kit: ^4.2.1
   flutter_staggered_animations: ^1.0.0
-  share_plus: ^6.0.0
+  #share_plus: ^6.0.0
   dropdown_search: ^5.0.2
   # google_maps_flutter: ^2.1.6
   # geocoding: ^2.0.5
