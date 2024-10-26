@@ -166,7 +166,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const SizedBox(height: 8),
                   Text('johndoe@example.com',
-                      style: Theme.of(context).textTheme.subtitle1),
+                      style: Theme.of(context).textTheme.titleMedium),
                   const SizedBox(height: 32),
                   _buildProfileOption('Edit Profile', Icons.edit, () {
                     Navigator.push(
